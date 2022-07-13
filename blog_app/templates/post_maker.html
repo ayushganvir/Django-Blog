@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <form
+          action=" {% url 'post_maker' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+      {{ form.as_table }}
+    </p>
+  <input type="submit" value="ADD">
+  </form>
+        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+{%endblock%}

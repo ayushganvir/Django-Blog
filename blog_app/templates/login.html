@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<form action=" {% url 'post_login' %}" method="post">
+    {% csrf_token %}
+  <input type="text" name='username' id="username" placeholder="username">
+  <input type="password" name='password' id="password" placeholder="password">
+
+  <input type="submit" value="LOGIN">
+  </form>
+
+  <div class="container signin">
+    <p>Don't have an account? <a href="{% url 'blog_app_register' %}">Register</a>.</p>
+  </div>
+
+{% endblock content %}
